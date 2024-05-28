@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>List of Tutorials</title>
+</head>
+<body>
+    <h1>List of Tutorials</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>URL</th>
+            <th>Status</th>
+            <th>Date</th>
+            <th>Author</th>
+        </tr>
+        <tr th:each="tutorial : ${tutorials}">
+            <td th:text="${tutorial.id}"></td>
+            <td th:text="${tutorial.nombre}"></td>
+            <td th:text="${tutorial.descripcion}"></td>
+            <td th:text="${tutorial.url}"></td>
+            <td th:text="${tutorial.estado}"></td>
+            <td th:text="${tutorial.fecha}"></td>
+            <td th:text="${tutorial.autor}"></td>
+        </tr>
+    </table>
+    <a href="/tutorials/create">Create New Tutorial</a>
+</body>
+</html>
